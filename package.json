@@ -1,0 +1,55 @@
+{
+  "name": "sec-check",
+  "displayName": "security-check",
+  "description": "prints code as it is",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "menus": {
+      "editor/title": [
+        {
+          "command": "sec-check.print",
+          "group": "navigation",
+          "icon": "${private-ports-view-icon}"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "sec-check.testCommand",
+        "title": "Test"
+      },
+      {
+        "command": "sec-check.showTime",
+        "title": "Show Time"
+      },
+      {
+        "command": "sec-check.print",
+        "title": "Show Code"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.9.1"
+  },
+  "dependencies": {
+    "vsce": "^1.97.0"
+  }
+}
